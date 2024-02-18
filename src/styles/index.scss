@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap");
+
+:root {
+  --aj-white: #fff;
+  --aj-dark: #000;
+  --aj-blue: #007be5;
+
+  --aj-gray-100: #e5e5e5;
+  --aj-gray-200: #d9d9d9;
+
+  --aj-dark-100: #000000e5;
+
+  --aj-header-bg: var(--aj-white);
+  --aj-primary: var(--aj-blue);
+
+  --aj-dm-sans: "DM Sans", sans-serif;
+  --aj-font-primary: var(--aj-dm-sans);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--aj-font-primary);
+  transition: all 300ms ease-in-out;
+}
+* {
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 4px;
+    color: var(--aj-gray-200);
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 5px solid var(--aj-gray-200);
+    border-radius: 4px;
+    background: transparent;
+  }
+}
+
+html {
+  font-family: var(--aj-font-primary);
+  font-size: 16px;
+  color: var(--aj-dark);
+  background-color: var(--aj-white);
+}
+
+.aj-icon-ex {
+  font-size: 1.5rem;
+}
