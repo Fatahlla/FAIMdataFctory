@@ -1,0 +1,820 @@
+{
+  "keys": [
+    "red",
+    "green",
+    "blue",
+    "pink",
+    "grass",
+    "blum",
+    "white",
+    "black",
+    "wheat"
+  ],
+  "graph-data": {
+    "red": [
+      {
+        "red": 40
+      },
+      {
+        "red": 22
+      },
+      {
+        "red": 26
+      },
+      {
+        "red": 21
+      },
+      {
+        "red": 25
+      }
+    ],
+    "green": [
+      {
+        "green": 24
+      },
+      {
+        "green": 34
+      },
+      {
+        "green": 38
+      },
+      {
+        "green": 28
+      },
+      {
+        "green": 26
+      }
+    ],
+    "blue": [
+      {
+        "blue": 31
+      },
+      {
+        "blue": 33
+      },
+      {
+        "blue": 39
+      },
+      {
+        "blue": 23
+      },
+      {
+        "blue": 33
+      }
+    ],
+    "pink": [
+      {
+        "pink": 21
+      },
+      {
+        "pink": 29
+      },
+      {
+        "pink": 24
+      },
+      {
+        "pink": 21
+      },
+      {
+        "pink": 31
+      }
+    ],
+    "grass": [
+      {
+        "grass": 22
+      },
+      {
+        "grass": 26
+      },
+      {
+        "grass": 38
+      },
+      {
+        "grass": 33
+      },
+      {
+        "grass": 33
+      }
+    ],
+    "blum": [
+      {
+        "blum": 20
+      },
+      {
+        "blum": 20
+      },
+      {
+        "blum": 36
+      },
+      {
+        "blum": 34
+      },
+      {
+        "blum": 36
+      }
+    ],
+    "white": [
+      {
+        "white": 24
+      },
+      {
+        "white": 39
+      },
+      {
+        "white": 40
+      },
+      {
+        "white": 30
+      },
+      {
+        "white": 32
+      }
+    ],
+    "black": [
+      {
+        "black": 34
+      },
+      {
+        "black": 40
+      },
+      {
+        "black": 28
+      },
+      {
+        "black": 31
+      },
+      {
+        "black": 38
+      }
+    ],
+    "wheat": [
+      {
+        "wheat": 30
+      },
+      {
+        "wheat": 40
+      },
+      {
+        "wheat": 23
+      },
+      {
+        "wheat": 25
+      },
+      {
+        "wheat": 37
+      }
+    ]
+  },
+  "data": [
+    {
+      "_id": "65c8be323bb65d5ddc63b155",
+      "index": 0,
+      "red": 33,
+      "green": 38,
+      "blue": 40,
+      "pink": 36,
+      "grass": 40,
+      "blum": 24,
+      "white": 31,
+      "black": 37,
+      "wheat": 21
+    },
+    {
+      "_id": "65c8be32a26711f3b525366a",
+      "index": 1,
+      "red": 36,
+      "green": 33,
+      "blue": 21,
+      "pink": 20,
+      "grass": 24,
+      "blum": 29,
+      "white": 28,
+      "black": 23,
+      "wheat": 27
+    },
+    {
+      "_id": "65c8be3240ecfea74512805d",
+      "index": 2,
+      "red": 33,
+      "green": 20,
+      "blue": 34,
+      "pink": 40,
+      "grass": 31,
+      "blum": 28,
+      "white": 37,
+      "black": 25,
+      "wheat": 28
+    },
+    {
+      "_id": "65c8be3255ac4bbfb9e245b2",
+      "index": 3,
+      "red": 36,
+      "green": 35,
+      "blue": 26,
+      "pink": 37,
+      "grass": 31,
+      "blum": 32,
+      "white": 24,
+      "black": 31,
+      "wheat": 21
+    },
+    {
+      "_id": "65c8be326b69078834772811",
+      "index": 4,
+      "red": 23,
+      "green": 35,
+      "blue": 37,
+      "pink": 24,
+      "grass": 25,
+      "blum": 39,
+      "white": 21,
+      "black": 27,
+      "wheat": 31
+    },
+    {
+      "_id": "65c8be32eef49d4dfc69c9df",
+      "index": 5,
+      "red": 26,
+      "green": 34,
+      "blue": 38,
+      "pink": 31,
+      "grass": 35,
+      "blum": 22,
+      "white": 32,
+      "black": 34,
+      "wheat": 24
+    },
+    {
+      "_id": "65c8be3211b445f2e3d8d4e0",
+      "index": 6,
+      "red": 34,
+      "green": 33,
+      "blue": 34,
+      "pink": 20,
+      "grass": 31,
+      "blum": 26,
+      "white": 32,
+      "black": 37,
+      "wheat": 35
+    },
+    {
+      "_id": "65c8be32da74ee80d78b37ec",
+      "index": 7,
+      "red": 35,
+      "green": 28,
+      "blue": 39,
+      "pink": 32,
+      "grass": 21,
+      "blum": 31,
+      "white": 35,
+      "black": 32,
+      "wheat": 27
+    },
+    {
+      "_id": "65c8be329f7607b5d25f8648",
+      "index": 8,
+      "red": 26,
+      "green": 31,
+      "blue": 33,
+      "pink": 36,
+      "grass": 31,
+      "blum": 40,
+      "white": 23,
+      "black": 30,
+      "wheat": 20
+    },
+    {
+      "_id": "65c8be328a836c0d60068a1b",
+      "index": 9,
+      "red": 40,
+      "green": 26,
+      "blue": 30,
+      "pink": 20,
+      "grass": 23,
+      "blum": 37,
+      "white": 33,
+      "black": 30,
+      "wheat": 39
+    },
+    {
+      "_id": "65c8be32e8b6f2d5e0b818fb",
+      "index": 10,
+      "red": 22,
+      "green": 22,
+      "blue": 32,
+      "pink": 35,
+      "grass": 39,
+      "blum": 39,
+      "white": 23,
+      "black": 38,
+      "wheat": 35
+    },
+    {
+      "_id": "65c8be328beef92568114933",
+      "index": 11,
+      "red": 38,
+      "green": 40,
+      "blue": 35,
+      "pink": 20,
+      "grass": 33,
+      "blum": 40,
+      "white": 34,
+      "black": 20,
+      "wheat": 26
+    },
+    {
+      "_id": "65c8be32ba59de6071e6c401",
+      "index": 12,
+      "red": 35,
+      "green": 31,
+      "blue": 25,
+      "pink": 23,
+      "grass": 26,
+      "blum": 20,
+      "white": 35,
+      "black": 35,
+      "wheat": 23
+    },
+    {
+      "_id": "65c8be32b94cdeb88a5225c6",
+      "index": 13,
+      "red": 34,
+      "green": 30,
+      "blue": 25,
+      "pink": 26,
+      "grass": 20,
+      "blum": 31,
+      "white": 39,
+      "black": 23,
+      "wheat": 31
+    },
+    {
+      "_id": "65c8be32f11bbc8338ebc841",
+      "index": 14,
+      "red": 36,
+      "green": 40,
+      "blue": 38,
+      "pink": 32,
+      "grass": 37,
+      "blum": 24,
+      "white": 21,
+      "black": 34,
+      "wheat": 29
+    },
+    {
+      "_id": "65c8be3224f85fca39872317",
+      "index": 15,
+      "red": 25,
+      "green": 29,
+      "blue": 36,
+      "pink": 23,
+      "grass": 37,
+      "blum": 37,
+      "white": 20,
+      "black": 24,
+      "wheat": 40
+    },
+    {
+      "_id": "65c8be3283cd2050100a8d75",
+      "index": 16,
+      "red": 39,
+      "green": 23,
+      "blue": 37,
+      "pink": 21,
+      "grass": 24,
+      "blum": 20,
+      "white": 24,
+      "black": 28,
+      "wheat": 36
+    },
+    {
+      "_id": "65c8be32a16e5dfc4e7554ed",
+      "index": 17,
+      "red": 32,
+      "green": 20,
+      "blue": 32,
+      "pink": 37,
+      "grass": 29,
+      "blum": 35,
+      "white": 32,
+      "black": 30,
+      "wheat": 38
+    },
+    {
+      "_id": "65c8be32ffd2a570a3b920b5",
+      "index": 18,
+      "red": 27,
+      "green": 27,
+      "blue": 20,
+      "pink": 30,
+      "grass": 33,
+      "blum": 23,
+      "white": 40,
+      "black": 27,
+      "wheat": 28
+    },
+    {
+      "_id": "65c8be32ea2bc45c048fcafb",
+      "index": 19,
+      "red": 32,
+      "green": 23,
+      "blue": 37,
+      "pink": 25,
+      "grass": 30,
+      "blum": 33,
+      "white": 22,
+      "black": 35,
+      "wheat": 20
+    },
+    {
+      "_id": "65c8be32047a35701df188a2",
+      "index": 20,
+      "red": 32,
+      "green": 25,
+      "blue": 20,
+      "pink": 20,
+      "grass": 23,
+      "blum": 35,
+      "white": 36,
+      "black": 37,
+      "wheat": 29
+    },
+    {
+      "_id": "65c8be322c7877f0d1deee37",
+      "index": 21,
+      "red": 37,
+      "green": 35,
+      "blue": 33,
+      "pink": 27,
+      "grass": 34,
+      "blum": 39,
+      "white": 30,
+      "black": 29,
+      "wheat": 32
+    },
+    {
+      "_id": "65c8be321a3fc0b143010b65",
+      "index": 22,
+      "red": 38,
+      "green": 23,
+      "blue": 28,
+      "pink": 33,
+      "grass": 28,
+      "blum": 37,
+      "white": 31,
+      "black": 27,
+      "wheat": 21
+    },
+    {
+      "_id": "65c8be3264c945f8e94df446",
+      "index": 23,
+      "red": 37,
+      "green": 27,
+      "blue": 32,
+      "pink": 39,
+      "grass": 40,
+      "blum": 35,
+      "white": 29,
+      "black": 26,
+      "wheat": 28
+    },
+    {
+      "_id": "65c8be326b01f0a76e6e118b",
+      "index": 24,
+      "red": 29,
+      "green": 27,
+      "blue": 35,
+      "pink": 30,
+      "grass": 27,
+      "blum": 23,
+      "white": 20,
+      "black": 26,
+      "wheat": 37
+    },
+    {
+      "_id": "65c8be32ec521ee39b735144",
+      "index": 25,
+      "red": 32,
+      "green": 38,
+      "blue": 36,
+      "pink": 29,
+      "grass": 28,
+      "blum": 24,
+      "white": 40,
+      "black": 32,
+      "wheat": 21
+    },
+    {
+      "_id": "65c8be32c45c59b75cdf2fd6",
+      "index": 26,
+      "red": 31,
+      "green": 35,
+      "blue": 20,
+      "pink": 33,
+      "grass": 27,
+      "blum": 39,
+      "white": 35,
+      "black": 35,
+      "wheat": 21
+    },
+    {
+      "_id": "65c8be323c7aeff4717327ba",
+      "index": 27,
+      "red": 36,
+      "green": 28,
+      "blue": 37,
+      "pink": 40,
+      "grass": 29,
+      "blum": 31,
+      "white": 28,
+      "black": 26,
+      "wheat": 25
+    },
+    {
+      "_id": "65c8be327fbd04e40f16fce3",
+      "index": 28,
+      "red": 21,
+      "green": 27,
+      "blue": 38,
+      "pink": 29,
+      "grass": 32,
+      "blum": 20,
+      "white": 20,
+      "black": 22,
+      "wheat": 36
+    },
+    {
+      "_id": "65c8be32fc2528ea829622ca",
+      "index": 29,
+      "red": 23,
+      "green": 38,
+      "blue": 37,
+      "pink": 32,
+      "grass": 40,
+      "blum": 22,
+      "white": 36,
+      "black": 33,
+      "wheat": 21
+    },
+    {
+      "_id": "65c8be322f81cee59c33e26c",
+      "index": 30,
+      "red": 39,
+      "green": 21,
+      "blue": 21,
+      "pink": 38,
+      "grass": 30,
+      "blum": 20,
+      "white": 28,
+      "black": 24,
+      "wheat": 30
+    },
+    {
+      "_id": "65c8be32f1a746f3a645b46e",
+      "index": 31,
+      "red": 22,
+      "green": 28,
+      "blue": 24,
+      "pink": 22,
+      "grass": 37,
+      "blum": 29,
+      "white": 39,
+      "black": 30,
+      "wheat": 38
+    },
+    {
+      "_id": "65c8be3205d52322e9e5ea0c",
+      "index": 32,
+      "red": 35,
+      "green": 22,
+      "blue": 30,
+      "pink": 28,
+      "grass": 21,
+      "blum": 31,
+      "white": 29,
+      "black": 30,
+      "wheat": 32
+    },
+    {
+      "_id": "65c8be32f7171fe79c120efa",
+      "index": 33,
+      "red": 29,
+      "green": 33,
+      "blue": 29,
+      "pink": 30,
+      "grass": 23,
+      "blum": 32,
+      "white": 22,
+      "black": 21,
+      "wheat": 31
+    },
+    {
+      "_id": "65c8be3266188d6035be294c",
+      "index": 34,
+      "red": 35,
+      "green": 32,
+      "blue": 24,
+      "pink": 37,
+      "grass": 24,
+      "blum": 37,
+      "white": 24,
+      "black": 24,
+      "wheat": 39
+    },
+    {
+      "_id": "65c8be3213099752dac15c2d",
+      "index": 35,
+      "red": 22,
+      "green": 38,
+      "blue": 20,
+      "pink": 39,
+      "grass": 33,
+      "blum": 21,
+      "white": 30,
+      "black": 22,
+      "wheat": 34
+    },
+    {
+      "_id": "65c8be320886d65a5087239e",
+      "index": 36,
+      "red": 20,
+      "green": 40,
+      "blue": 31,
+      "pink": 37,
+      "grass": 39,
+      "blum": 26,
+      "white": 30,
+      "black": 23,
+      "wheat": 29
+    },
+    {
+      "_id": "65c8be32e673981e37664f73",
+      "index": 37,
+      "red": 37,
+      "green": 20,
+      "blue": 33,
+      "pink": 39,
+      "grass": 22,
+      "blum": 20,
+      "white": 20,
+      "black": 39,
+      "wheat": 21
+    },
+    {
+      "_id": "65c8be327800afb69f46ac8d",
+      "index": 38,
+      "red": 23,
+      "green": 38,
+      "blue": 23,
+      "pink": 27,
+      "grass": 36,
+      "blum": 29,
+      "white": 21,
+      "black": 37,
+      "wheat": 25
+    },
+    {
+      "_id": "65c8be3293bc54c187b37c0a",
+      "index": 39,
+      "red": 26,
+      "green": 27,
+      "blue": 20,
+      "pink": 24,
+      "grass": 29,
+      "blum": 30,
+      "white": 37,
+      "black": 31,
+      "wheat": 33
+    },
+    {
+      "_id": "65c8be3270be2d6e62713556",
+      "index": 40,
+      "red": 39,
+      "green": 24,
+      "blue": 40,
+      "pink": 38,
+      "grass": 21,
+      "blum": 37,
+      "white": 33,
+      "black": 26,
+      "wheat": 40
+    },
+    {
+      "_id": "65c8be3211d957b71116f3f2",
+      "index": 41,
+      "red": 31,
+      "green": 27,
+      "blue": 27,
+      "pink": 22,
+      "grass": 29,
+      "blum": 31,
+      "white": 26,
+      "black": 20,
+      "wheat": 33
+    },
+    {
+      "_id": "65c8be32b84f378dc5fd01e8",
+      "index": 42,
+      "red": 32,
+      "green": 20,
+      "blue": 25,
+      "pink": 28,
+      "grass": 36,
+      "blum": 29,
+      "white": 24,
+      "black": 40,
+      "wheat": 40
+    },
+    {
+      "_id": "65c8be325762cb5ee4cf1fdb",
+      "index": 43,
+      "red": 29,
+      "green": 36,
+      "blue": 24,
+      "pink": 20,
+      "grass": 27,
+      "blum": 26,
+      "white": 37,
+      "black": 23,
+      "wheat": 34
+    },
+    {
+      "_id": "65c8be32635a3f646bcad313",
+      "index": 44,
+      "red": 34,
+      "green": 38,
+      "blue": 22,
+      "pink": 20,
+      "grass": 36,
+      "blum": 22,
+      "white": 27,
+      "black": 22,
+      "wheat": 35
+    },
+    {
+      "_id": "65c8be3290f8dcb9994b0d7d",
+      "index": 45,
+      "red": 40,
+      "green": 25,
+      "blue": 27,
+      "pink": 20,
+      "grass": 40,
+      "blum": 36,
+      "white": 29,
+      "black": 28,
+      "wheat": 35
+    },
+    {
+      "_id": "65c8be32fc25994c675ea383",
+      "index": 46,
+      "red": 40,
+      "green": 37,
+      "blue": 25,
+      "pink": 21,
+      "grass": 29,
+      "blum": 28,
+      "white": 20,
+      "black": 34,
+      "wheat": 31
+    },
+    {
+      "_id": "65c8be32ff77567db03e1a2f",
+      "index": 47,
+      "red": 35,
+      "green": 28,
+      "blue": 36,
+      "pink": 37,
+      "grass": 39,
+      "blum": 40,
+      "white": 32,
+      "black": 26,
+      "wheat": 30
+    },
+    {
+      "_id": "65c8be326f69dec40d8543c3",
+      "index": 48,
+      "red": 32,
+      "green": 31,
+      "blue": 28,
+      "pink": 34,
+      "grass": 28,
+      "blum": 39,
+      "white": 34,
+      "black": 28,
+      "wheat": 26
+    },
+    {
+      "_id": "65c8be3231de42f270cb255f",
+      "index": 49,
+      "red": 30,
+      "green": 40,
+      "blue": 28,
+      "pink": 37,
+      "grass": 24,
+      "blum": 29,
+      "white": 37,
+      "black": 30,
+      "wheat": 26
+    }
+  ]
+}
