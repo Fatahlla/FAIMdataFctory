@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import Header from "./layouts/Header";
+import Sidebar from "./layouts/Sidebar";
+import UploadFile from "./pages/UploadFile";
+import VisualizeData from "./pages/VisualizeData";
+import NotFound from "./pages/NotFound";
 
-function App() {
+export default function App() {
+  const [MenuShow, setMenuShow] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header MenuShow={MenuShow} setMenuShow={setMenuShow} />
+      <Container>
+        <Sidebar MenuShow={MenuShow} setMenuShow={setMenuShow} />
+        <div className="body">
+          <Routes>
+            <Route path="/" element={<UploadFile />} />
+            <Route path="/upload" element={<UploadFile />} />
+            <Route path="/confirm" element={<VisualizeData />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </Container>
+    </>
   );
 }
 
-export default App;
+const Container = styled.div`
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  display: flex;
+  background-color: var(--aj-cream);
+  height: calc(100dvh - (25px + 32px));
+  overflow: hidden;
+  & > .body {
+    flex: 10;
+    height: 100%;
+    overflow-y: auto;
+  }
+`;
