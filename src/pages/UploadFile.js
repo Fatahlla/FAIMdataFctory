@@ -3,16 +3,22 @@ import styled from "styled-components";
 import { LuUploadCloud } from "react-icons/lu";
 
 export default function UploadFile() {
-  function handleUpload(e) {
-    e.preventDefault();
+  const handleUpload = async (e) => {
+    const formData = new FormData();
+    formData.append("file", e.target.files[0]);
+    const result = await fetch("https://savenger.no-ip.org:8877/api/data_upload/", {
+      method: "POST",
+      body: formData,
+    });
   }
+
   return (
     <Container>
       <div className="upload">
         <LuUploadCloud className="aj-icon-ex" />{" "}
         <span>Upload or drag and drop a CSV file.</span>
         <span>Max size 30 MB</span>
-        <input type="file" accept="text/csv" onChange={handleUpload} />
+        <input id="file" type="file" accept="text/csv" onChange={handleUpload} />
       </div>
     </Container>
   );
