@@ -21,6 +21,17 @@ export default function VisualizeData() {
 
   useEffect(() => {
     let data;
+    fetch("https://savenger.no-ip.org:8877/api/data_upload/")
+      .then((res) => res.json())
+      .then((res) => {
+        let id = res[0].id;
+        fetch("https://savenger.no-ip.org:8877/api/data_upload/" + id + "/insights")
+          .then((res) => {
+            let data = res.json();
+            console.log(data);
+            setDATA(data);
+          })
+      })
     // fetch("https://example.com/")
     //   .then((res) => res.json())
     //   .then((res) => (data = res))
