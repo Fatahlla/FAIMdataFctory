@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { CiSearch } from "react-icons/ci";
+import { aj_res_sm } from "../settings/responsiveSizes";
 
 export default function Header({ MenuShow, setMenuShow }) {
+  const [SearchTxt, setSearchTxt] = useState();
   return (
     <Container>
       <header>
@@ -14,6 +17,27 @@ export default function Header({ MenuShow, setMenuShow }) {
           />
           <a href="/" className="logo">
             dicoFaim
+          </a>
+        </div>
+        <div className="center">
+          <div className="search">
+            <input
+              type="text"
+              placeholder="Search"
+              value={SearchTxt}
+              onChange={(e) => setSearchTxt(e.target.value)}
+            />
+            <button>
+              <CiSearch />
+            </button>
+          </div>
+        </div>
+        <div className="right">
+          <a className="aj-df-button-tertiary" href="/sign">
+            Sign In
+          </a>
+          <a className="aj-df-button-dark" href="/register">
+            Register
           </a>
         </div>
       </header>
@@ -65,6 +89,39 @@ const Container = styled.div`
         font-weight: 500;
         font-size: 1.15rem;
       }
+    }
+    & > .center {
+      @media (max-width: ${aj_res_sm}px) {
+        display: none;
+      }
+      & > .search {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 11fr 1fr;
+        gap: 0.5rem;
+        border: 1px solid var(--aj-gray-100);
+        padding: 0.5rem 1rem;
+        padding-right: 0.2rem;
+        font-size: 1rem;
+        border-radius: 0.8rem;
+        & > input {
+          background-color: transparent;
+          border: none;
+          outline: none;
+        }
+        & > button {
+          display: flex;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+    & > .right {
+      display: flex;
+      gap: 0.7rem;
     }
   }
 `;
