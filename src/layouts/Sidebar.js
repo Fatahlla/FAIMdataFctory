@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { CiSearch } from "react-icons/ci";
+import { aj_res_md, aj_res_sm } from "../settings/responsiveSizes";
 
 export default function Sidebar({ MenuShow, setMenuShow }) {
+  const [SearchTxt, setSearchTxt] = useState();
+
   const navs = [{ title: "Create", href: "/" }, { title: "History" }];
+
   return (
     <Container className={MenuShow ? "active" : ""}>
       <i
@@ -11,8 +16,23 @@ export default function Sidebar({ MenuShow, setMenuShow }) {
         onClick={() => setMenuShow(false)}
         tabIndex={0}
       />
+      <div className="search">
+        <input
+          type="text"
+          placeholder="Search"
+          value={SearchTxt}
+          onChange={(e) => setSearchTxt(e.target.value)}
+        />
+        <button>
+          <CiSearch />
+        </button>
+      </div>
       {React.Children.toArray(
-        navs.map((item) => <button className="button">{item.title}</button>)
+        navs.map((item) => (
+          <a href={item?.href} className="button">
+            {item.title}
+          </a>
+        ))
       )}
     </Container>
   );
@@ -31,7 +51,7 @@ const Container = styled.aside`
   & > .close {
     display: none;
   }
-  @media (max-width: 780px) {
+  @media (max-width: ${aj_res_md}px) {
     display: none;
     &.active {
       position: fixed;
@@ -73,15 +93,44 @@ const Container = styled.aside`
       }
     }
   }
+  & > .search {
+    @media (min-width: ${aj_res_sm}px) {
+      display: none;
+    }
+    display: grid;
+    align-items: center;
+    grid-template-columns: 11fr 1fr;
+    gap: 0.5rem;
+    border: 1px solid var(--aj-gray-100);
+    padding: 0.5rem 1rem;
+    padding-right: 0.2rem;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    & > input {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+    & > button {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
   & > .button {
     font-size: 1rem;
     color: var(--aj-dark-100);
     background-color: transparent;
+    text-decoration: none;
     border: none;
     outline: none;
     text-align: left;
     padding: 12px 16px;
     border-right: 5px solid transparent;
+    cursor: pointer;
     &:hover,
     &:focus-visible {
       background-color: var(--aj-gray-100);
