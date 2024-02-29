@@ -1,10 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { LuUploadCloud } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 export default function UploadFile() {
+  const navigate = useNavigate();
+
   function handleUpload(e) {
+    let id;
     e.preventDefault();
+    // upload code starts here
+    // ...
+    //  id = fileID; // will be used to fetch data
+    // upload code ends here
+    navigate(`/confirm?ID=${id}`);
   }
   return (
     <Container>
