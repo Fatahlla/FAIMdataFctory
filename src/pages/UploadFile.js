@@ -5,23 +5,34 @@ import { useNavigate } from "react-router-dom";
 
 export default function UploadFile() {
   const navigate = useNavigate();
+  const handleUpload = async (e) => {
+    const formData = new FormData();
+    formData.append("file", e.target.files[0]);
+    const result = await fetch(
+      "https://savenger.no-ip.org:8877/api/data_upload/",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+    Promise.resolve(result)
+      .then((value) => console.log(value))
+      .catch((error) => console.error(error));
+    // navigate(`/confirm?ID=${id}`);
+  };
 
-  function handleUpload(e) {
-    let id;
-    e.preventDefault();
-    // upload code starts here
-    // ...
-    //  id = fileID; // will be used to fetch data
-    // upload code ends here
-    navigate(`/confirm?ID=${id}`);
-  }
   return (
     <Container>
       <div className="upload">
         <LuUploadCloud className="aj-icon-ex" />{" "}
         <span>Upload or drag and drop a CSV file.</span>
         <span>Max size 30 MB</span>
-        <input type="file" accept="text/csv" onChange={handleUpload} />
+        <input
+          id="file"
+          type="file"
+          accept="text/csv"
+          onChange={handleUpload}
+        />
       </div>
     </Container>
   );
