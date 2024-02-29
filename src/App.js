@@ -6,6 +6,7 @@ import Sidebar from "./layouts/Sidebar";
 import UploadFile from "./pages/UploadFile";
 import VisualizeData from "./pages/VisualizeData";
 import NotFound from "./pages/NotFound";
+import PreviousFiles from "./pages/PreviousFiles";
 
 export default function App() {
   const [MenuShow, setMenuShow] = useState(false);
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/" element={<UploadFile />} />
             <Route path="/upload" element={<UploadFile />} />
             <Route path="/confirm" element={<VisualizeData />} />
+            <Route path="/history" element={<PreviousFiles />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
