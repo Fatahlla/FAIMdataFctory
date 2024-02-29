@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { CiSearch } from "react-icons/ci";
 import { aj_res_md, aj_res_sm } from "../settings/responsiveSizes";
+import { useLocation } from "react-router-dom";
 
 export default function Sidebar({ MenuShow, setMenuShow }) {
   const [SearchTxt, setSearchTxt] = useState();
+  const [CurrentLocation, setCurrentLocation] = useState();
 
-  const navs = [{ title: "Create", href: "/" }, { title: "History" }];
+  const location = useLocation();
+
+  const navs = [
+    { title: "Create", href: "/" },
+    { title: "History", href: "/history" },
+  ];
 
   return (
     <Container className={MenuShow ? "active" : ""}>
@@ -29,7 +36,12 @@ export default function Sidebar({ MenuShow, setMenuShow }) {
       </div>
       {React.Children.toArray(
         navs.map((item) => (
-          <a href={item?.href} className="button">
+          <a
+            href={item?.href}
+            className={`button ${
+              location.pathname === item?.href ? "active" : ""
+            }`}
+          >
             {item.title}
           </a>
         ))
@@ -121,6 +133,7 @@ const Container = styled.aside`
     }
   }
   & > .button {
+    width: 100%;
     font-size: 1rem;
     color: var(--aj-dark-100);
     background-color: transparent;
@@ -131,6 +144,7 @@ const Container = styled.aside`
     padding: 12px 16px;
     border-right: 5px solid transparent;
     cursor: pointer;
+    &.active,
     &:hover,
     &:focus-visible {
       background-color: var(--aj-gray-100);
