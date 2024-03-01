@@ -15,10 +15,11 @@ export default function UploadFile() {
         body: formData,
       }
     );
+    let id;
     Promise.resolve(result)
-      .then((value) => console.log(value))
+      .then((response) => {console.log(response); id = response.id})
       .catch((error) => console.error(error));
-    // navigate(`/confirm?ID=${id}`);
+    navigate(`/confirm?id=${id}`);
   };
 
   return (

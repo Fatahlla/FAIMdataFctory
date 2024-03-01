@@ -15,19 +15,17 @@ export default function VisualizeData() {
   const query = useLocationQuery();
 
   useEffect(() => {
+    console.log(query);
     let data;
-    fetch("https://savenger.no-ip.org:8877/api/data_upload/")
-      .then((res) => res.json())
-      .then((res) => {
-        let id = res[0].id;
-        fetch(
-          "https://savenger.no-ip.org:8877/api/data_upload/" + id + "/insights"
-        ).then((res) => {
-          let data = res.json();
-          console.log(data);
-          setDATA(data);
-        });
+    if (query.id) {
+      fetch(
+        "https://savenger.no-ip.org:8877/api/data_upload/" + query.id + "/insights"
+      ).then((res) => {
+        let data = res.json();
+        console.log(data);
+        setDATA(data);
       });
+    }
     // fetch("https://example.com/")
     //   .then((res) => res.json())
     //   .then((res) => (data = res))
@@ -41,7 +39,7 @@ export default function VisualizeData() {
       setKeyFinal(Data?.keys);
       setKeyIsKey(Data?.keys);
     }
-  }, []);
+  }, [query.id]);
 
   return (
     <Container>
@@ -59,9 +57,8 @@ export default function VisualizeData() {
             React.Children.toArray(
               DataNavInfo.map((item) => (
                 <button
-                  className={`dataNav_item ${
-                    DataNav === item?.value ? "active" : ""
-                  }`}
+                  className={`dataNav_item ${DataNav === item?.value ? "active" : ""
+                    }`}
                   onClick={() => setDataNav(item?.value)}
                 >
                   {item?.title}
