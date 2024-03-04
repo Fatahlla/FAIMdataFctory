@@ -7,23 +7,45 @@ import UploadFile from "./pages/UploadFile";
 import VisualizeData from "./pages/VisualizeData";
 import NotFound from "./pages/NotFound";
 import PreviousFiles from "./pages/PreviousFiles";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 export default function App() {
   const [MenuShow, setMenuShow] = useState(false);
+
+  const PAGES = [
+    { path: "/sign-in", element: <Login />, setup: "none" },
+    { path: "/register", element: <Register />, setup: "none" },
+    { path: "/", element: <UploadFile />, setup: "all" },
+    { path: "/upload", element: <UploadFile />, setup: "all" },
+    { path: "/confirm", element: <VisualizeData />, setup: "all" },
+    { path: "/history", element: <PreviousFiles />, setup: "all" },
+  ];
+
   return (
     <>
       <Header MenuShow={MenuShow} setMenuShow={setMenuShow} />
       <Container>
-        <Sidebar MenuShow={MenuShow} setMenuShow={setMenuShow} />
-        <div className="body">
-          <Routes>
-            <Route path="/" element={<UploadFile />} />
-            <Route path="/upload" element={<UploadFile />} />
-            <Route path="/confirm" element={<VisualizeData />} />
-            <Route path="/history" element={<PreviousFiles />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <Routes>
+          {React.Children.toArray(
+            PAGES.map((page) =>
+              page?.setup === "none" ? (
+                <Route path={page?.path} element={page?.element} />
+              ) : (
+                <Route
+                  path={page?.path}
+                  element={
+                    <>
+                      <Sidebar MenuShow={MenuShow} setMenuShow={setMenuShow} />
+                      <div className="body">{page?.element}</div>
+                    </>
+                  }
+                />
+              )
+            )
+          )}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </Container>
     </>
   );
