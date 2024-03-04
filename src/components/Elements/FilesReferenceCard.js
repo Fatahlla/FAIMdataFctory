@@ -10,7 +10,7 @@ export default function FilesReferenceCard({ data }) {
     <Container
       role="button"
       tabIndex={0}
-      onClick={() => navigate("/confirm?id=" + data?.id)}
+      onClick={() => navigate("/datasets?id=" + data?.id)}
     >
       <h3>{data?.file?.split("/")?.[4]?.replaceAll("_", " ")}</h3>
       <button className="aj-df-button-primary-text">

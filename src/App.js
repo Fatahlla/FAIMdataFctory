@@ -18,7 +18,7 @@ export default function App() {
     { path: "/register", element: <Register />, setup: "none" },
     { path: "/", element: <UploadFile />, setup: "all" },
     { path: "/upload", element: <UploadFile />, setup: "all" },
-    { path: "/confirm", element: <VisualizeData />, setup: "all" },
+    { path: "/datasets", element: <VisualizeData />, setup: "all" },
     { path: "/history", element: <PreviousFiles />, setup: "all" },
   ];
 
