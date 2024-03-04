@@ -5,6 +5,7 @@ import ConfirmDataTable from "../components/tables/ConfirmDataTable";
 import { FiDownload } from "react-icons/fi";
 import { useLocationQuery } from "../utils";
 import { DataNavInfo } from "../settings/DataNavInfo";
+import { DataProcessDatasetView } from "../utils/functions/DataProcess";
 
 export default function VisualizeData() {
   const [DATA, setDATA] = useState();
@@ -15,29 +16,23 @@ export default function VisualizeData() {
   const query = useLocationQuery();
 
   useEffect(() => {
-    let data;
     if (query?.id) {
       fetch(
-        "https://savenger.no-ip.org:8877/api/data_upload/" +
-          query.id +
-          "/insights"
+        `https://savenger.no-ip.org:8877/api/data_upload/${query.id}/insights`
       )
+        .then((res) => res.json())
         .then((res) => {
-          let data = res.json();
-          console.log(data);
-          setDATA(data);
+          setDATA(DataProcessDatasetView(res));
+          setKeyFinal(DataProcessDatasetView(res)?.keys);
+          setKeyIsKey(DataProcessDatasetView(res)?.keys);
         })
         .catch((error) => console.error(error));
-    }
-    if (data) {
-      setDATA(data);
-      setKeyFinal(data?.keys);
-      setKeyIsKey(data?.keys);
-    } else {
-      // handel errors below
+      console.log();
     }
   }, [query.id]);
 
+  // Promise.resolve(DATA).then((value) =>
+  // );
   console.log(DATA && DATA);
 
   return (
