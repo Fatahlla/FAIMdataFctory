@@ -31,9 +31,7 @@ export default function VisualizeData() {
     }
   }, [query.id]);
 
-  // Promise.resolve(DATA).then((value) =>
-  // );
-  console.log(DATA && DATA);
+  // console.log(DATA);
 
   return (
     <Container>
