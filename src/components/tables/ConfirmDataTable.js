@@ -14,6 +14,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { MdVpnKey, MdVpnKeyOff } from "react-icons/md";
 import { aj_res_md } from "../../settings/responsiveSizes";
 import DropDownSelect from "../Elements/DropDownSelect";
+import Graph3 from "../Elements/Graph3";
 
 export default function ConfirmDataTable({
   DATA,
@@ -24,8 +25,8 @@ export default function ConfirmDataTable({
 }) {
   return (
     <Container className={``}>
-      <div className="data_con">
-        {DATA && (
+      {DATA && (
+        <div className="data_con">
           <div className="table">
             <div className="header">
               <div
@@ -36,7 +37,7 @@ export default function ConfirmDataTable({
                   }, 170px)`,
                 }}
               >
-                <div className="col">ID</div>
+                <div className="col d-flex align-center justify-center">ID</div>
                 {DATA?.keys &&
                   Array.isArray(DATA.keys) &&
                   DATA.keys.length > 0 &&
@@ -44,7 +45,7 @@ export default function ConfirmDataTable({
                     DATA.keys.map((item) => (
                       <div className="col">
                         <div className="line">
-                          {item.toUpperCase()}{" "}
+                          {item.toUpperCase().replaceAll("_", " ")}{" "}
                           <div className="right">
                             {/* Data type */}
                             <span
@@ -132,7 +133,8 @@ export default function ConfirmDataTable({
                   React.Children.toArray(
                     DATA.keys.map((item) => (
                       <div className="col graph">
-                        <ResponsiveContainer width="100%" height="100%">
+                        <Graph3 data={DATA?.distributions?.[item]} />
+                        {/* <ResponsiveContainer width="100%" height="100%">
                           <LineChart
                             width={500}
                             height={300}
@@ -154,7 +156,7 @@ export default function ConfirmDataTable({
                               stroke="#82ca9d"
                             />
                           </LineChart>
-                        </ResponsiveContainer>
+                        </ResponsiveContainer> */}
                       </div>
                     ))
                   )}
@@ -194,40 +196,40 @@ export default function ConfirmDataTable({
                 )}
             </div>
           </div>
-        )}
-        <div className="graphs">
-          <h2>Graphs:</h2>
-          {DATA?.keys &&
-            Array.isArray(DATA.keys) &&
-            DATA.keys.length > 0 &&
-            React.Children.toArray(
-              DATA.keys.map((item) => (
-                <div className="graph-data">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
-                      width={500}
-                      height={300}
-                      data={DATA?.["graph-data"]?.[item]}
-                      margin={{
-                        top: 5,
-                        right: 5,
-                        left: -10,
-                        bottom: 5,
-                      }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Line type="monotone" dataKey={item} stroke="#82ca9d" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              ))
-            )}
+          <div className="graphs">
+            <h2>Graphs:</h2>
+            {DATA?.keys &&
+              Array.isArray(DATA.keys) &&
+              DATA.keys.length > 0 &&
+              React.Children.toArray(
+                DATA.keys.map((item) => (
+                  <div className="graph-data">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart
+                        width={500}
+                        height={300}
+                        data={DATA?.["graph-data"]?.[item]}
+                        margin={{
+                          top: 5,
+                          right: 5,
+                          left: -10,
+                          bottom: 5,
+                        }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Line type="monotone" dataKey={item} stroke="#82ca9d" />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                ))
+              )}
+          </div>
         </div>
-      </div>
+      )}
     </Container>
   );
 }
@@ -259,10 +261,11 @@ const Container = styled.div`
         width: 100%;
       }
       & > * > .row > .col {
+        font-size: 0.8rem;
         padding: 8px;
         vertical-align: middle;
         &.graph {
-          aspect-ratio: 4/3;
+          aspect-ratio: 5/4;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -277,11 +280,14 @@ const Container = styled.div`
         z-index: 1;
         & > .row {
           & > .col {
+            background-color: var(--aj-white);
             & > .line {
               display: flex;
               gap: 12px;
               justify-content: space-between;
               align-items: center;
+              height: 100%;
+              /* word-break: break-all; */
               & > .right {
                 display: flex;
                 align-items: center;
