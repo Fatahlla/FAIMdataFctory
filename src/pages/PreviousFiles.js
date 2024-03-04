@@ -9,7 +9,6 @@ export default function PreviousFiles() {
     fetch("https://savenger.no-ip.org:8877/api/data_upload/")
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setFiles(res);
       });
   }, []);
