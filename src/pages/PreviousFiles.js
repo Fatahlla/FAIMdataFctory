@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import FilesReferenceCard from "../components/Elements/FilesReferenceCard";
 
 export default function PreviousFiles() {
   const [Files, setFiles] = useState();
@@ -16,13 +17,26 @@ export default function PreviousFiles() {
   return (
     <Container>
       <h2>Datasets</h2>
-      {
-        Files && React.Children.toArray(Files.map((item) => <a href={"/confirm?id=" + item.id}>{item.file}</a>))
-      }
+      <div className="card-container">
+        {Files && Array.isArray(Files) && Files.length > 0 ? (
+          React.Children.toArray(
+            Files.map((item) => <FilesReferenceCard data={item} />)
+          )
+        ) : (
+          <p className="empty">No data Found</p>
+        )}
+      </div>
     </Container>
   );
 }
 
 const Container = styled.main`
   padding: 24px 16px;
+  & > .card-container {
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 16px;
+    position: relative;
+  }
 `;
