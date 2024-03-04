@@ -58,6 +58,10 @@ html {
   overflow: hidden;
 }
 
+button {
+  cursor: pointer;
+}
+
 .aj {
   &-icon {
     &-ex {
@@ -130,6 +134,23 @@ html {
           border: 1px solid
             color-mix(in srgb, var(--aj-blue) 80%, var(--aj-gray-100));
         }
+        &-text {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          padding: 0.6rem 0.9rem;
+          text-decoration: none;
+          font-weight: 600;
+          border-radius: 1rem;
+          color: var(--aj-primary);
+          &:hover {
+            box-shadow: 0 0 2px var(--aj-dark-100);
+          }
+          &:focus-visible {
+            border: 1px solid
+              color-mix(in srgb, var(--aj-blue) 80%, var(--aj-gray-100));
+          }
+        }
       }
       &-secondary {
         background-color: var(--aj-secondary);
@@ -146,6 +167,23 @@ html {
         &:focus-visible {
           border: 1px solid
             color-mix(in srgb, var(--aj-blue) 80%, var(--aj-gray-100));
+        }
+        &-text {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          padding: 0.6rem 0.9rem;
+          text-decoration: none;
+          font-weight: 600;
+          border-radius: 1rem;
+          color: var(--aj-secondary);
+          &:hover {
+            box-shadow: 0 0 2px var(--aj-dark-100);
+          }
+          &:focus-visible {
+            border: 1px solid
+              color-mix(in srgb, var(--aj-blue) 80%, var(--aj-gray-100));
+          }
         }
       }
       &-tertiary {
