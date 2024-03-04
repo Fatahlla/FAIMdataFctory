@@ -17,9 +17,12 @@ export default function UploadFile() {
     );
     let id;
     Promise.resolve(result)
-      .then((response) => {console.log(response); id = response.id})
+      .then((response) => {
+        console.log(response);
+        id = response.id;
+      })
       .catch((error) => console.error(error));
-    navigate(`/confirm?id=${id}`);
+    navigate(`/datasets?id=${id}`);
   };
 
   return (

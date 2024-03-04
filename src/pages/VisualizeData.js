@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Data from "../DummyTable.json";
+// import Data from "../DummyTable.json";
 import ConfirmDataTable from "../components/tables/ConfirmDataTable";
 import { FiDownload } from "react-icons/fi";
 import { useLocationQuery } from "../utils";
 import { DataNavInfo } from "../settings/DataNavInfo";
+import { DataProcessDatasetView } from "../utils/functions/DataProcess";
 
 export default function VisualizeData() {
   const [DATA, setDATA] = useState();
@@ -15,31 +16,24 @@ export default function VisualizeData() {
   const query = useLocationQuery();
 
   useEffect(() => {
-    console.log(query);
-    let data;
-    if (query.id) {
+    if (query?.id) {
       fetch(
-        "https://savenger.no-ip.org:8877/api/data_upload/" + query.id + "/insights"
-      ).then((res) => {
-        let data = res.json();
-        console.log(data);
-        setDATA(data);
-      });
-    }
-    // fetch("https://example.com/")
-    //   .then((res) => res.json())
-    //   .then((res) => (data = res))
-    //   .catch((err) => console.error(err));
-    if (data) {
-      setDATA(data);
-      setKeyFinal(data?.keys);
-      setKeyIsKey(data?.keys);
-    } else {
-      setDATA(Data);
-      setKeyFinal(Data?.keys);
-      setKeyIsKey(Data?.keys);
+        `https://savenger.no-ip.org:8877/api/data_upload/${query.id}/insights`
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          setDATA(DataProcessDatasetView(res));
+          setKeyFinal(DataProcessDatasetView(res)?.keys);
+          setKeyIsKey(DataProcessDatasetView(res)?.keys);
+        })
+        .catch((error) => console.error(error));
+      console.log();
     }
   }, [query.id]);
+
+  // Promise.resolve(DATA).then((value) =>
+  // );
+  console.log(DATA && DATA);
 
   return (
     <Container>
@@ -57,8 +51,9 @@ export default function VisualizeData() {
             React.Children.toArray(
               DataNavInfo.map((item) => (
                 <button
-                  className={`dataNav_item ${DataNav === item?.value ? "active" : ""
-                    }`}
+                  className={`dataNav_item ${
+                    DataNav === item?.value ? "active" : ""
+                  }`}
                   onClick={() => setDataNav(item?.value)}
                 >
                   {item?.title}
