@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { CiSearch } from "react-icons/ci";
 import { aj_res_sm } from "../settings/responsiveSizes";
+import AppLogo from "../components/Elements/AppLogo";
 
 export default function Header({ MenuShow, setMenuShow }) {
   const [SearchTxt, setSearchTxt] = useState();
@@ -15,9 +16,7 @@ export default function Header({ MenuShow, setMenuShow }) {
             onClick={() => setMenuShow(true)}
             tabIndex={0}
           />
-          <a href="/" className="logo">
-            dicoFaim
-          </a>
+          <AppLogo />
         </div>
         <div className="center">
           <div className="search">
@@ -33,7 +32,7 @@ export default function Header({ MenuShow, setMenuShow }) {
           </div>
         </div>
         <div className="right">
-          <a className="aj-df-button-tertiary" href="/sign">
+          <a className="aj-df-button-tertiary" href="/sign-in">
             Sign In
           </a>
           <a className="aj-df-button-dark" href="/register">
@@ -82,12 +81,6 @@ const Container = styled.div`
         @media (min-width: 780px) {
           display: none;
         }
-      }
-      & > .logo {
-        color: var(--aj-dark);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1.15rem;
       }
     }
     & > .center {
