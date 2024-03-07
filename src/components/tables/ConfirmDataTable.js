@@ -133,7 +133,14 @@ export default function ConfirmDataTable({
                   React.Children.toArray(
                     DATA.keys.map((item) => (
                       <div className="col graph">
-                        <Graph3 data={DATA?.distributions?.[item]} />
+                        <Graph3
+                          data={DATA?.distributions?.[item]}
+                          defaultStyle={
+                            DATA?.distributions?.[item]?.length < 5
+                              ? "pie"
+                              : "bar"
+                          }
+                        />
                         {/* <ResponsiveContainer width="100%" height="100%">
                           <LineChart
                             width={500}
