@@ -13,7 +13,7 @@ import {
   YAxis,
 } from "recharts";
 
-export default function Graph3({ data }) {
+export default function Graph3({ data, defaultStyle = "bar" }) {
   const RADIAN = Math.PI / 180;
   const options = [
     { name: "text", icon: <LuText /> },
@@ -21,7 +21,7 @@ export default function Graph3({ data }) {
     { name: "pie", icon: <LuPieChart /> },
   ];
 
-  const [Show, setShow] = useState(options?.[1]?.name);
+  const [Show, setShow] = useState(defaultStyle);
 
   const CustomLabel = ({
     cx,
