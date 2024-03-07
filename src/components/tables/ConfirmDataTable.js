@@ -138,6 +138,7 @@ export default function ConfirmDataTable({
                               ? "pie"
                               : "bar"
                           }
+                          length={DATA?.distributions?.[item]?.length}
                         />
                         {/* <ResponsiveContainer width="100%" height="100%">
                           <LineChart

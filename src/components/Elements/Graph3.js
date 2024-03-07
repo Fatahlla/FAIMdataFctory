@@ -13,7 +13,7 @@ import {
   YAxis,
 } from "recharts";
 
-export default function Graph3({ data, defaultStyle = "bar" }) {
+export default function Graph3({ data, defaultStyle = "bar", length }) {
   const RADIAN = Math.PI / 180;
   const options = [
     { name: "text", icon: <LuText /> },
@@ -110,7 +110,7 @@ export default function Graph3({ data, defaultStyle = "bar" }) {
     }
   };
 
-  return (
+  return length > 0 ? (
     <Container style={{ overflow: Show === "text" && "auto" }}>
       <div className="options">
         {React.Children.toArray(
@@ -126,6 +126,8 @@ export default function Graph3({ data, defaultStyle = "bar" }) {
       </div>
       {CurrentChart()}
     </Container>
+  ) : (
+    <>-</>
   );
 }
 
