@@ -47,6 +47,7 @@ const Container = styled.div`
       border-radius: 8px;
       background-color: var(--aj-white);
       border: 1px solid var(--aj-gray-200);
+      z-index: 10;
       & > .option {
         font-size: 1rem;
         color: var(--aj-dark-100);
