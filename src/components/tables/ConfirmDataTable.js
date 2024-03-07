@@ -116,8 +116,6 @@ export default function ConfirmDataTable({
                     ))
                   )}
               </div>
-            </div>
-            <div className="body">
               <div
                 className="row"
                 style={{
@@ -168,7 +166,8 @@ export default function ConfirmDataTable({
                     ))
                   )}
               </div>
-
+            </div>
+            <div className="body">
               {DATA?.data &&
                 Array.isArray(DATA.data) &&
                 DATA.data.length > 0 &&
