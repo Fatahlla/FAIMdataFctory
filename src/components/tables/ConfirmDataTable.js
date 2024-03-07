@@ -45,7 +45,9 @@ export default function ConfirmDataTable({
                     DATA.keys.map((item) => (
                       <div className="col">
                         <div className="line">
-                          {item.toUpperCase().replaceAll("_", " ")}{" "}
+                          <span className="data_title">
+                            {item.toUpperCase().replaceAll("_", " ")}{" "}
+                          </span>
                           <div className="right">
                             {/* Data type */}
                             <span
@@ -195,7 +197,9 @@ export default function ConfirmDataTable({
                         DATA.keys.length > 0 &&
                         React.Children.toArray(
                           DATA.keys.map((item) => (
-                            <div className="col">{obj?.[item]}</div>
+                            <div className="col">
+                              {obj?.[item] ? obj[item] : "-"}
+                            </div>
                           ))
                         )}
                     </div>
@@ -264,7 +268,6 @@ const Container = styled.div`
       position: relative;
       & > * > .row {
         display: grid;
-        gap: 8px;
         width: 100%;
       }
       & > * > .row > .col {
@@ -283,31 +286,39 @@ const Container = styled.div`
         position: sticky;
         position: -webkit-sticky;
         top: 0;
-        background-color: var(--aj-white);
         z-index: 1;
         & > .row {
-          & > .col {
-            background-color: var(--aj-white);
-            & > .line {
-              display: flex;
-              gap: 12px;
-              justify-content: space-between;
-              align-items: center;
-              height: 100%;
-              /* word-break: break-all; */
-              & > .right {
+          background-color: var(--aj-white);
+          &:first-child {
+            & > .col {
+              background-color: var(--aj-white);
+              & > .line {
                 display: flex;
-                align-items: center;
                 gap: 12px;
-                & > span {
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                /* word-break: break-all; */
+                & > .data_title {
+                  word-break: break-word;
+                }
+                & > .right {
                   display: flex;
-                  cursor: pointer;
+                  align-items: center;
+                  gap: 12px;
+                  & > span {
+                    display: flex;
+                    cursor: pointer;
+                  }
                 }
               }
+              & > .errors {
+                padding-top: 0%.5rem;
+              }
             }
-            & > .errors {
-              padding-top: 0%.5rem;
-            }
+          }
+          & > .col {
+            background-color: var(--aj-white);
           }
         }
       }
